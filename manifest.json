@@ -1,10 +1,10 @@
 {
 
   "manifest_version": 2,
-  "name": "Borderify",
+  "name": "linkedin-ukvisa-checker",
   "version": "1.0",
 
-  "description": "Adds a red border to all webpages matching mozilla.org.",
+  "description": "Checks if company on linkedin sponsors UK skilled worker visas.",
 
   "icons": {
     "48": "icons/border-48.png"
@@ -13,8 +13,13 @@
   "content_scripts": [
     {
       "matches": ["*://*.linkedin.com/*"],
-      "js": ["borderify.js"]
+      "js": ["scripts/find-companies.js"],
+      "run_at": "document_idle"
     }
+  ],
+  
+  "permissions": [
+  "*://*.linkedin.com/*"
   ]
 
 }
